@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\CompanyController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,27 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/category', [CompanyController::class,'index'])->name('category');
+Route::get('/', [CategoryController::class, 'index']);
 
-Route::get('/tambahcategory', [CompanyController::class,'tambahcategory'])->name('tambahcategory');
-Route::post('/insertdata', [CompanyController::class,'insertdata'])->name('insertdata');
-
-Route::get('/tambahhcategory/{id}', [CompanyController::class,'tambahhcategory'])->name('tambahhcategory');
-Route::post('/updatecategory/{id}', [CompanyController::class,'updatecategory'])->name('updatecategory');
-
-Route::get('/delete/{id}', [CompanyController::class,'delete'])->name('delete');
-
-
-//Tampilan Article
-Route::get('/detaildata/{id}', [CompanyController::class,'detaildata'])->name('detaildata');
-//Tambah Article
-Route::get('/tambaharticle/{id}', [CompanyController::class,'tambaharticle'])->name('tambaharticle');
-Route::post('/insertarticle/{id}', [CompanyController::class,'insertarticle'])->name('insertarticle');
-//Edit Article
-Route::get('/tambahkanarticle/{id}', [CompanyController::class,'tambahkanarticle'])->name('tambahkanarticle');
-Route::post('/updatearticle/{id}', [CompanyController::class,'updatearticle'])->name('updatearticle');
-//Delete Article
-Route::get('/deletearticle/{id}', [CompanyController::class,'deletearticle'])->name('deletearticle');
+Route::resource('article', ArticleController::class);
+Route::resource('category', CategoryController::class);
