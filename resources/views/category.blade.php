@@ -4,6 +4,7 @@
 
 @section('content')
     <section class="py-5">
+        <h2 class="text-center">Category Article</h2>
         <a href="{{ route('category.create') }}" type="button" class="btn btn-warning">Tambah Category</a>
         <div class="row">
             <div class="card mt-4">

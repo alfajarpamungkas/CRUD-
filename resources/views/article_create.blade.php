@@ -24,7 +24,7 @@
                                 </div>
                                 <div class="form-group mb-2">
                                     <label for="image">Image</label>
-                                    <input type="file" name="image" class="form-control" placeholder="image" required>
+                                    <input type="file" name="image" class="form-control" onchange="previewFile(this)"/>
                                 </div>
                                 <div class="form-group mb-2">
                                     <label for="category_id">Category</label>
@@ -40,7 +40,7 @@
                                     <select name="status" class="form-control" required>
                                         <option value="">Pilih Status</option>
                                         <option value="Publish">Publish</option>
-                                        <option value="Draft">Draft</option>
+                                        <option value="pending">Pending</option>
                                     </select>
                                 </div>
                                 <div class="form-group mb-2">

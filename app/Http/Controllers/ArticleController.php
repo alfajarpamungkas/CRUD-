@@ -79,8 +79,12 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = Article::find($id);
+        $data->update($request->all());
+
+        return redirect()->route('article.index');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -90,6 +94,9 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Article::find($id);
+        $data->delete();
+
+        return redirect()->route('article.index');
     }
 }
